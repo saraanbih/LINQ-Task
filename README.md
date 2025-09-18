@@ -29,7 +29,7 @@ git checkout -b YourName-solutions
 - Repeat for other problems
 
 **How to Set as Startup Project:**
-![Set as Startup Project](image.png)
+<img width="635" height="880" alt="image" src="https://github.com/user-attachments/assets/e6c0dc77-a060-4ed3-8aa1-e76da3a8dded" />
 
 ### 5. Save All Your Work
 ```bash
