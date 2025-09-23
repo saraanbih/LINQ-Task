@@ -50,7 +50,15 @@ namespace LINQ_Task
              */
 
             // ============================================
-            // YOUR SOLUTION HERE
+            var students2 = students.GroupBy(s => s.GroupNumber)
+                .OrderBy(g => g.Key)
+                .Select(g => new { Group = g.Key, Count = g.Count() });
+           
+                foreach (var group in students2)
+                {
+                    Console.WriteLine($"Group {group.Group}: {group.Count} students");
+                }
+            
             // ============================================
 
         }

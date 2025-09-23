@@ -48,8 +48,14 @@ namespace LINQ_Task
              */
 
             // ============================================
-            // YOUR SOLUTION HERE
+            var students2 = students.Where(s => s.Email.Contains("@gmail.com"));
+            foreach (var student in students2)
+            {
+                Console.WriteLine(student);
+            }
             // ============================================
+           
+
 
         }
     }

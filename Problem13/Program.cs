@@ -54,13 +54,45 @@ namespace LINQ_Task
              * First with 'A': Ahmed Hassan (Age: 20)
              * Last older than 20: Mohamed Ali (Age: 22)
              * Student at index 2: Omar Mahmoud (Age: 21)
-             * Single student age 19: Fatma Ibrahim (Age: 19)
+             * C Fatma Ibrahim (Age: 19)
              * Any age 19: True
              * All have grades: True
              */
 
             // ============================================
-            // YOUR SOLUTION HERE
+            var TaskA = students.First(x => x.FirstName.StartsWith("A"));
+            
+            
+                Console.WriteLine($"First with 'A': {TaskA}");
+            
+
+            Console.WriteLine("-------TaskB-------");
+
+            var TaskB = students.Last(x => x.Age > 20);
+            
+           
+                Console.WriteLine($" Last older than 20:{TaskB}");
+            
+
+            Console.WriteLine("-------TaskC-------");
+
+            var TaskC = students.ElementAtOrDefault(2);
+
+            Console.WriteLine($" Student at index 2:{TaskC}");
+
+            Console.WriteLine("-------TaskD-------");
+
+            var TaskD = students.SingleOrDefault(x => x.Age == 19);
+
+            Console.WriteLine($" Find the single student with age exactly 19:{TaskD}");
+
+            Console.WriteLine("-------TaskE-------");
+            var TaskE = students.Any(x => x.Age == 19);
+            Console.WriteLine($" Check if there's any student with age exactly 19: {TaskE}");
+
+            Console.WriteLine("-------TaskF-------");
+            var TaskF = students.All(s => s.Grades != null && s.Grades.Any());
+            Console.WriteLine($" Check if all students have grades:{TaskF}");
             // ============================================
 
         }

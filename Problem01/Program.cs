@@ -48,7 +48,13 @@ namespace LINQ_Task
              */
 
             // ============================================
-            // YOUR SOLUTION HERE
+            var s2 = students.Where(student => student.GroupNumber ==2)
+                .OrderBy(student => student.FirstName);
+            foreach (var item in s2)
+            {
+                Console.WriteLine(item);
+                
+            }
             // ============================================
 
         }

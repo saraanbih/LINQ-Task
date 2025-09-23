@@ -65,9 +65,33 @@ namespace LINQ_Task
              */
 
             // ============================================
-            // YOUR SOLUTION HERE
-            // ============================================
+            var topStudentsByCity = students
+                    .Select(s => new
+                    {
+                        Name = $"{s.FirstName} {s.LastName}",
+                        s.City,
+                        Average = s.Grades.Average()
+                    })
+                    .GroupBy(s => s.City)
+                    .OrderBy(g => g.Key) 
+                    .Select(g => new
+                    {
+                        City = g.Key,
+                        TopStudents = g
+                            .OrderByDescending(s => s.Average) 
+                            .Take(2) 
+                    });
 
-        }
+            foreach (var group in topStudentsByCity)
+            {
+                Console.WriteLine($"{group.City}:");
+                foreach (var student in group.TopStudents)
+                {
+                    Console.WriteLine($"  {student.Name} - Average: {student.Average:F1}");
+                }
+            }
+        }            // ============================================
+
     }
+
 }

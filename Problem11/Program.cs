@@ -74,11 +74,25 @@ namespace LINQ_Task
              */
 
             // ============================================
-            // YOUR SOLUTION HERE
+            var Joinstudents = from student in students
+                               join course in courses
+                               on student.CourseId equals course.Id
+                               orderby course.Name, student.FirstName
+                               select new
+                               {
+                                   FullName = $"{student.FirstName} {student.LastName}",
+                                   CourseName = course.Name,
+                                   Instructor = course.Instructor
+
+                               };
+            foreach (var item in Joinstudents)
+            {
+                Console.WriteLine($"{item.FullName} - {item.CourseName} ({item.Instructor})");
+            }
+        }
             // ============================================
 
 
 
         }
     }
-}

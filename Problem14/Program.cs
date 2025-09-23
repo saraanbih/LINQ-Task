@@ -59,7 +59,41 @@ namespace LINQ_Task
              */
 
             // ============================================
-            // YOUR SOLUTION HERE
+            var TaskA = students.Count();
+
+
+            Console.WriteLine($"Total Students:{TaskA}");
+
+
+            Console.WriteLine("-------TaskB-------");
+
+            var TaskB = students.SelectMany(s => s.Grades).Average();
+
+
+            Console.WriteLine($"Overall Average Grade:{TaskB}");
+
+
+            Console.WriteLine("-------TaskC-------");
+
+            var TaskC = students.SelectMany(s => s.Grades).Max();
+
+            Console.WriteLine($" Highest Grade:{TaskC}");
+
+            Console.WriteLine("-------TaskD-------");
+
+            var TaskD = students.SelectMany(s => s.Grades).Min();
+
+            Console.WriteLine($" Lowest Grade:{TaskD}");
+
+            Console.WriteLine("-------TaskE-------");
+
+            var TaskE = students.Where(s => s.City== "Cairo").SelectMany(s => s.Grades).Sum();
+            Console.WriteLine($"Cairo Total Grades: {TaskE}");
+
+            Console.WriteLine("-------TaskF-------");
+
+            var TaskF = students.Select(s => $"{s.FirstName} {s.LastName}").Aggregate((a, b) => a + ", " + b);
+            Console.WriteLine($" All Names {TaskF}");
             // ============================================
 
         }

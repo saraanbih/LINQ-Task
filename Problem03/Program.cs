@@ -50,7 +50,11 @@ namespace LINQ_Task
              */
 
             // ============================================
-            // YOUR SOLUTION HERE
+            var students2= students.Where(s => s.FirstName.Length > 5).OrderByDescending(s=>s.FirstName.Length) ;
+            foreach (var student in students2)
+            {
+                Console.WriteLine(student); 
+            }
             // ============================================
 
         }

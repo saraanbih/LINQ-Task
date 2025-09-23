@@ -52,7 +52,19 @@ namespace LINQ_Task
              */
 
             // ============================================
-            // YOUR SOLUTION HERE
+            var studentsMarks = students
+             .Where(s => s.FacultyNumber.EndsWith("14") || s.FacultyNumber.EndsWith("15"))
+             .Select(s => s.Marks);
+
+     
+            foreach (var marks in studentsMarks)
+            {
+                Console.WriteLine(string.Join(" ", marks));
+            }
+
+
+
+
             // ============================================
 
         }

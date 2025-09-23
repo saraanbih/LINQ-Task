@@ -47,7 +47,12 @@ namespace LINQ_Task
              */
 
             // ============================================
-            // YOUR SOLUTION HERE
+            var students2 = students.Where(s => s.Marks.Contains(3) && s.Marks.Contains(2));
+
+            foreach (Student student in students2)
+            {
+                Console.WriteLine(student);
+            }
             // ============================================
 
         }

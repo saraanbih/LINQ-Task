@@ -64,7 +64,37 @@ namespace LINQ_Task
              */
 
             // ============================================
-            // YOUR SOLUTION HERE
+            var TaskA = cairoStudents.Intersect(alexandriaStudents);
+            foreach (var student in TaskA)
+            {
+                Console.WriteLine(student);
+            }
+
+            Console.WriteLine("-------TaskB-------");
+
+            var TaskB = cairoStudents.Union(gizaStudents).Union(alexandriaStudents);
+            foreach (var student in TaskB) 
+            { 
+                Console.WriteLine(student);
+            }
+
+            Console.WriteLine("-------TaskC-------");
+
+            var TaskC = cairoStudents.Except(alexandriaStudents);
+            foreach (var student in TaskC)
+            {
+                Console.WriteLine(student);
+            }
+
+            Console.WriteLine("-------TaskD-------");
+
+            var TaskD = cairoStudents.Distinct();
+            foreach (var student in TaskD)
+            {
+                Console.WriteLine(student);
+            }
+
+
             // ============================================
 
         }
